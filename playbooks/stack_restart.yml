@@ -23,8 +23,8 @@
     - name: start webserver
       service: name=apache2 state=started
 
-- hosts: database
+- hosts: loadbalancer
   become: true
   tasks:
-    - name: stop mysql
-      service: name=mysql state=started
+    - name: start nginx
+      service: name=nginx state=started
