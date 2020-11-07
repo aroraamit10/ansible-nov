@@ -6,4 +6,3 @@
       apt: name={{with_item}} state=installed update_cache=yes
       with_items:
         - curl
-            

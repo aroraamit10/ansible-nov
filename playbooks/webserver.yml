@@ -9,3 +9,6 @@
         - libapache2-mod-wsgi
         - python-pip
         - python-virtualenv
+
+    - name: start apache2
+      service: name=apache2 satte=started ensure=yes
