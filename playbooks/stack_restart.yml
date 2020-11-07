@@ -15,7 +15,7 @@
   become: true
   tasks:
     - name: stop mysql
-      service: name=mysql state=restart
+      service: name=mysql state=restarted
 
 - hosts: webserver
   become: true
