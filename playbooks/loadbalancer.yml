@@ -13,7 +13,7 @@
       notify: restart nginx
 
     - name: disable nginx default site
-      file: path=/etc/nginx/sites-enabled/defaults state=absent
+      file: path=/etc/nginx/sites-enabled/default state=absent
       notify: restart nginx
 
     - name: enable demo nginx site
