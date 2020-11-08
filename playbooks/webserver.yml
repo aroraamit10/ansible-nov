@@ -29,6 +29,14 @@
       pip: requirements=/var/www/demo/requirements.txt virtualenv=/var/www/demo/.venv
       notify: restart apache2
 
+    - name: disable default vitual host 
+      file: src=/etc/apache2/sites-enabled/000-default.conf state=absent
+      notify: restart apache2 
+
+    - name: enable demo.conf
+      file: src=/etc/apache2/sites-available/demo.conf desc=/etc/apache2/sites-enabled/demo.conf state=link
+      notify: restart apache2
+
   handlers:
     - name: restart apache2
       service: name=apache2 state=restarted
