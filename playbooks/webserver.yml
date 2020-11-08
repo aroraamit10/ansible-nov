@@ -30,7 +30,7 @@
       notify: restart apache2
 
     - name: disable default vitual host 
-      file: src=/etc/apache2/sites-enabled/000-default.conf state=absent
+      file: path=/etc/apache2/sites-enabled/000-default.conf state=absent
       notify: restart apache2 
 
     - name: enable demo.conf
