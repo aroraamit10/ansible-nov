@@ -13,12 +13,12 @@
   notify: restart nginx
 
 - name: get active sites
-  shell: ls -l /etc/nginx/sites-enabled
+  shell: "ls -l /etc/nginx/sites-enabled"
   register: active
 
 - name: de-activate nginx site
   file: path=/etc/nginx/sites-enabled/{{ item }} state=absent
-  with_items: active.stdout_lines
+  with_items: "{{ active.stdout_lines }}"
   when: item not in sites
   notify: restart nginx
 
